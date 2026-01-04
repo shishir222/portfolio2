@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELCOME</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Share Tech Mono Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="p-4 md:p-8">
+
+    <!-- Background Video -->
+    <video autoplay muted loop id="bg-video" class="fixed top-0 left-0 w-full h-full object-cover z-0">
+        <source src="background.mp4" type="video/mp4">
+    </video>
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 p-4 bg-transparent backdrop-blur-sm border-b border-gray-700">
+        <div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto">
+            <h1 class="hud-title text-xl font-bold tracking-widest text-center md:text-left">
+                WELCOME☺️
+            </h1>
+            
+            <div class="flex space-x-2 md:space-x-4 mt-2 md:mt-0 text-sm font-semibold">
+                <a href="#home" class="hud-button py-1 px-3">HOME</a>
+                <a href="#about" class="hud-button py-1 px-3">ABOUT</a>
+                <a href="#skills" class="hud-button py-1 px-3">SKILLS</a>
+                <a href="#services" class="hud-button py-1 px-3">SERVICES</a>
+                <a href="#portfolio" class="hud-button py-1 px-3">PROJECTS</a>
+                <a href="#contact" class="hud-button py-1 px-3">CONTACT</a>
+                <a href="https://ccrwritesforyou.blogspot.com/" target="_blank" class="hud-button py-1 px-3">BLOG</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="w-full mx-auto relative z-10">
+
+        <!-- Home Section -->
+        <section id="home" class="full-page-section">
+            <div class="hud-panel p-6 md:p-10 text-center">
+                <h1 class="hud-title text-5xl md:text-6xl font-bold tracking-widest mb-6">
+                    SHISHIR CHALISE
+                </h1>
+                
+                <!-- Profile Image -->
+                <div class="w-40 h-40 mx-auto mb-6 relative p-1 border-2 border-dashed border-blue-500 rounded-full" 
+                     style="box-shadow: 0 0 10px rgba(0,191,255,0.5);">
+                    <img src="profile.png" alt="User Profile" class="w-full h-full object-cover rounded-full filter saturate-150" />
+                    <span class="absolute top-0 right-0 h-5 w-5 bg-blue-500 rounded-full" style="box-shadow: 0 0 7px #00BFFF;"></span>
+                    <span class="absolute bottom-0 left-0 h-5 w-5 bg-blue-500 rounded-full" style="box-shadow: 0 0 7px #00BFFF;"></span>
+                </div>
+                
+                <p class="text-3xl font-bold accent-color">DEVELOPER / DESIGNER</p>
+                <p class="text-lg text-gray-400 mt-4 max-w-xl mx-auto">
+                    Hi, I’m Shishir Chalise, a CSIT student and front-end developer passionate about creating functional and meaningful digital experiences.
+                </p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="full-page-section">
+            <div class="hud-panel p-6 md:p-10">
+                <h2 class="section-title mb-4">EDUCATION LOG</h2>
+                <p class="text-lg text-gray-400 mb-6">
+                    <i class="fas fa-graduation-cap accent-color mr-3"></i> STATUS: ACTIVE ACQUISITION
+                </p>
+                <div class="text-base text-justify space-y-4">
+                    <p>
+                        Currently a **First Semester CSIT student** at **Butwal Multiple Campus**, focused on JavaScript, Python, HTML, and CSS.
+                    </p>
+                    <p>
+                        I aim to move beyond theoretical knowledge and focus on practical applications, building intuitive and visually pleasing digital experiences.
+                    </p>
+                    <p class="text-red-400 font-semibold">
+                        MISSION: Blend technical proficiency with creative design principles, creating functional and visually compelling applications.
+                    </p>
+                </div>
+                <div class="mt-10 text-lg text-center font-bold">
+                    <span class="accent-color">CURRENT FOCUS:</span> JAVASCRIPT & FRONT-END FRAMEWORKS
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="full-page-section">
+            <div class="hud-panel p-6 md:p-10">
+                <h2 class="section-title mb-6">SKILLS MATRIX</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2 text-lg">
+                            <span class="font-semibold"><i class="fab fa-html5 accent-color mr-2"></i> HTML5</span>
+                            <span class="text-sm text-gray-400">90%</span>
+                        </div>
+                        <div class="skill-bar-hud"><div class="skill-fill-hud" style="width:90%;"></div></div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2 text-lg">
+                            <span class="font-semibold"><i class="fab fa-css3-alt accent-color mr-2"></i> CSS3 / TAILWIND</span>
+                            <span class="text-sm text-gray-400">85%</span>
+                        </div>
+                        <div class="skill-bar-hud"><div class="skill-fill-hud" style="width:85%;"></div></div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2 text-lg">
+                            <span class="font-semibold"><i class="fab fa-js-square accent-color mr-2"></i> JAVASCRIPT</span>
+                            <span class="text-sm text-gray-400">65%</span>
+                        </div>
+                        <div class="skill-bar-hud"><div class="skill-fill-hud" style="width:65%;"></div></div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2 text-lg">
+                            <span class="font-semibold"><i class="fas fa-palette accent-color mr-2"></i> GRAPHIC DESIGN</span>
+                            <span class="text-sm text-gray-400">75%</span>
+                        </div>
+                        <div class="skill-bar-hud"><div class="skill-fill-hud" style="width:75%;"></div></div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex justify-between mb-2 text-lg">
+                            <span class="font-semibold"><i class="fab fa-python accent-color mr-2"></i> PYTHON</span>
+                            <span class="text-sm text-gray-400">50%</span>
+                        </div>
+                        <div class="skill-bar-hud"><div class="skill-fill-hud" style="width:50%;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="full-page-section">
+            <div class="hud-panel p-6 md:p-10">
+                <h2 class="section-title mb-6">SERVICES</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-base">
+                    <div class="border-l-4 border-blue-500 pl-4 py-3">
+                        <span class="accent-color font-semibold text-lg">Front-end Development</span>
+                        <p class="text-sm text-gray-500 mt-2">// Creating responsive, fast websites.</p>
+                    </div>
+                    <div class="border-l-4 border-blue-500 pl-4 py-3">
+                        <span class="accent-color font-semibold text-lg">Web Interface Design</span>
+                        <p class="text-sm text-gray-500 mt-2">// Clean, user-centric website interfaces.</p>
+                    </div>
+                    <div class="border-l-4 border-blue-500 pl-4 py-3">
+                        <span class="accent-color font-semibold text-lg">Graphic Asset Creation</span>
+                        <p class="text-sm text-gray-500 mt-2">// Engaging visual content and illustrations.</p>
+                    </div>
+                    <div class="border-l-4 border-blue-500 pl-4 py-3">
+                        <span class="accent-color font-semibold text-lg">Logo & Brand Identity</span>
+                        <p class="text-sm text-gray-500 mt-2">// Professional brand identity concepts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="full-page-section">
+            <div class="hud-panel p-6 md:p-10">
+                <h2 class="section-title mb-4">PROJECT LOGS</h2>
+                <div class="data-stream text-sm space-y-4 h-64 md:h-80 data-stream-text">
+                    <div class="p-3 border-b border-gray-700 hover:bg-gray-800 transition">
+                        <p class="accent-color font-semibold text-base">LOG ID: PROJ-RSL-001 / Responsive Landing Page</p>
+                        <p class="text-gray-400 mt-1">// Tailwind CSS responsive marketing page.</p>
+                        <p class="text-right text-xs text-blue-400 mt-1">[HTML | CSS | JS]</p>
+                    </div>
+                    <div class="p-3 border-b border-gray-700 hover:bg-gray-800 transition">
+                        <p class="accent-color font-semibold text-base">LOG ID: PROJ-QZ-002 / Interactive Quiz App</p>
+                        <p class="text-gray-400 mt-1">// DOM manipulation and JS logic project.</p>
+                        <p class="text-right text-xs text-blue-400 mt-1">[JavaScript | HTML/CSS]</p>
+                    </div>
+                    <div class="p-3 border-b border-gray-700 hover:bg-gray-800 transition">
+                        <p class="accent-color font-semibold text-base">LOG ID: PROJ-PY-003 / Python Data Visualizer</p>
+                        <p class="text-gray-400 mt-1">// Python scripts for simple visualizations.</p>
+                        <p class="text-right text-xs text-blue-400 mt-1">[Python | Data]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="full-page-section">
+            <div class="hud-panel p-6 md:p-10">
+                <h2 class="section-title mb-4">CONTACT</h2>
+                <div class="mb-6 space-y-4 text-base">
+                    <div class="flex items-center justify-center">
+                        <i class="fas fa-envelope accent-color w-8 text-2xl"></i>
+                        <span class="text-gray-400 mr-3">EMAIL:</span>
+                        <a href="mailto:shishirchalise255@gmail.com" class="ml-2 accent-color hover:text-white text-lg">shishirchalise255@gmail.com</a>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fas fa-satellite-dish accent-color w-8 text-2xl"></i>
+                        <span class="text-gray-400 mr-3">STATUS:</span>
+                        <span class="ml-2 text-red-500 text-lg">AWAITING TRANSMISSION</span>
+                    </div>
+                </div>
+                <div class="mt-10 flex justify-center space-x-10 text-4xl">
+                    <a href="https://www.facebook.com/shishir234" target="_blank" class="accent-color hover:text-white transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/shishirchalise43/?hl=en" target="_blank" class="accent-color hover:text-white transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <div class="mt-10 text-center text-sm text-gray-500">
+                    // SECURE DATA TRANSFER PROTOCOL INITIATED.
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center text-sm text-gray-600 pt-6 pb-16 mt-4">
+        &copy; 2025 Shishir Chalise | ALL RIGHTS RESERVED
+    </footer>
+    <!-- Tiny virus following the cursor -->
+ 
+<!-- Small sound button in top-right corner -->
+<button id="soundButton" style="
+    position: fixed;
+    top: 60px;           /* below blog button */
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 9999;
+    font-size: 20px;
+">🔊</button>
+
+<!-- Virus sound file -->
+<audio id="virusSound" loop>
+  <source src="virussound.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Virus cursor -->
+<img src="virus.png" id="virus" alt="virus">
+
+
+  <script src="script.js"></script>
+</body>
+</html>
+
