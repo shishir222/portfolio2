@@ -79,9 +79,42 @@ main, header, footer { position:relative; z-index:10; }
 
 #virus {
   position: fixed;
-  width: 32px;           /* slightly bigger than arrow */
-  height: 32px;
+  width: 44px;           /* slightly bigger than arrow */
+  height: 44px;
   pointer-events: none;   /* mouse passes through */
   transform: translate(-50%, -50%);
   z-index: 9999;
+}
+/* Hide the default system cursor */
+body {
+  cursor: none;
+}
+
+/* Neon arrow cursor */
+#neon-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 26px;          /* match normal arrow size */
+  height: 26px;
+  pointer-events: none; /* don’t block clicks */
+  z-index: 2147483647;  /* always on top of everything */
+
+  background: url('arrow.png') no-repeat center center;
+  background-size: contain;
+
+  /* Align arrow tip like a normal system cursor */
+  transform: translate(-2px, -2px);
+
+  /* Neon glow */
+  filter:
+    drop-shadow(0 0 2px var(--neon-blue))
+    drop-shadow(0 0 6px var(--neon-blue))
+    drop-shadow(0 0 12px var(--neon-blue));
+
+  transition: transform 0.02s linear; /* smooth movement */
+}
+/* Hide all system cursors, keep neon arrow visible */
+body, button, a, input, select, textarea {
+  cursor: none !important;
 }

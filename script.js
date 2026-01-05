@@ -111,3 +111,18 @@ document.addEventListener('DOMContentLoaded', () => {
   animate();
 });
 
+const neonCursor = document.getElementById('neon-cursor');
+
+document.addEventListener('mousemove', e => {
+  neonCursor.style.left = e.clientX + 'px';
+  neonCursor.style.top = e.clientY + 'px';
+});
+// Hide cursor when mouse leaves the window
+document.addEventListener('mouseleave', () => {
+  neonCursor.style.display = 'none';
+});
+
+// Show cursor when mouse enters the window
+document.addEventListener('mouseenter', () => {
+  neonCursor.style.display = 'block';
+});
