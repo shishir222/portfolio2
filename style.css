@@ -174,3 +174,20 @@ body, button, a, input, select, textarea {
     filter: drop-shadow(0 0 25px rgba(0, 242, 255, 0.9));
   }
 }
+/* The style that gets added by JavaScript */
+.playing-glow {
+    color: #FFD700 !important; /* Divine Gold */
+    text-shadow: 0 0 10px #FFD700, 
+                 0 0 20px #FFA500, 
+                 0 0 30px #FF8C00;
+    transform: scale(1.05); /* Slight pop out effect */
+    transition: all 0.8s ease-in-out;
+    animation: pulse-light 2s infinite;
+}
+
+/* A soft pulsing animation while the mantra plays */
+@keyframes pulse-light {
+    0% { opacity: 1; text-shadow: 0 0 10px #FFD700; }
+    50% { opacity: 0.8; text-shadow: 0 0 25px #FFD700; }
+    100% { opacity: 1; text-shadow: 0 0 10px #FFD700; }
+}

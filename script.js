@@ -153,13 +153,9 @@ document.addEventListener('click', (e) => {
         sound.play();
     }
 });
-// 1. Rename your file to krishna.mp3 to make this easier!
-// Otherwise, ensure this string matches the file name EXACTLY.
-const mantraSound = new Audio('krishna.mp3');
-
+const mantraSound = new Audio('krishna.mp3'); // Ensure file is renamed to krishna.mp3
 const mantraElement = document.getElementById('krishna-mantra');
 
-// This check prevents the audio from restarting while it's already playing
 let isMantraPlaying = false;
 
 if (mantraElement) {
@@ -167,18 +163,23 @@ if (mantraElement) {
         if (!isMantraPlaying) {
             isMantraPlaying = true;
             
+            // --- NEW: Add the glowing class ---
+            mantraElement.classList.add('playing-glow');
+            
             mantraSound.currentTime = 0; 
             mantraSound.volume = 0.4;
 
-            // Catching errors is important for browser security policies
             mantraSound.play().catch(error => {
-                console.log("Interaction required: Click anywhere on the page once to enable audio.");
-                isMantraPlaying = false; // Reset so they can try again
+                console.log("Interaction required: Click once to enable audio.");
+                isMantraPlaying = false; 
+                // Remove glow if it failed to play
+                mantraElement.classList.remove('playing-glow');
             });
 
-            // Set isPlaying to false when the sound finishes
+            // --- NEW: Remove the glowing class when music finishes ---
             mantraSound.onended = () => {
                 isMantraPlaying = false;
+                mantraElement.classList.remove('playing-glow');
             };
         }
     });
