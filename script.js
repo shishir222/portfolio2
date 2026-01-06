@@ -126,3 +126,16 @@ document.addEventListener('mouseleave', () => {
 document.addEventListener('mouseenter', () => {
   neonCursor.style.display = 'block';
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const robot = document.getElementById("robot");
+
+  // Show robot after a short delay
+  setTimeout(() => {
+    robot.classList.add("show");
+  }, 500);
+
+  // Hide after 5 seconds
+  setTimeout(() => {
+    robot.classList.replace("show", "hide");
+  }, 5500);
+});
