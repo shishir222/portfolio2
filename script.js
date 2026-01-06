@@ -126,6 +126,7 @@ document.addEventListener('mouseleave', () => {
 document.addEventListener('mouseenter', () => {
   neonCursor.style.display = 'block';
 });
+
 document.addEventListener("DOMContentLoaded", () => {
   const robot = document.getElementById("robot");
 
@@ -139,3 +140,46 @@ document.addEventListener("DOMContentLoaded", () => {
     robot.classList.replace("show", "hide");
   }, 5500);
 });
+document.addEventListener('click', (e) => {
+    const target = e.target.closest('button, a');
+    
+    if (target) {
+        const sound = new Audio('mixkit-sci-fi-click-900.wav');
+        
+        // Lower the volume (0.1 is very quiet, 0.5 is half volume)
+        sound.volume = 0.15; 
+        
+        sound.currentTime = 0;
+        sound.play();
+    }
+});
+// 1. Rename your file to krishna.mp3 to make this easier!
+// Otherwise, ensure this string matches the file name EXACTLY.
+const mantraSound = new Audio('krishna.mp3');
+
+const mantraElement = document.getElementById('krishna-mantra');
+
+// This check prevents the audio from restarting while it's already playing
+let isMantraPlaying = false;
+
+if (mantraElement) {
+    mantraElement.addEventListener('mouseenter', () => {
+        if (!isMantraPlaying) {
+            isMantraPlaying = true;
+            
+            mantraSound.currentTime = 0; 
+            mantraSound.volume = 0.4;
+
+            // Catching errors is important for browser security policies
+            mantraSound.play().catch(error => {
+                console.log("Interaction required: Click anywhere on the page once to enable audio.");
+                isMantraPlaying = false; // Reset so they can try again
+            });
+
+            // Set isPlaying to false when the sound finishes
+            mantraSound.onended = () => {
+                isMantraPlaying = false;
+            };
+        }
+    });
+}
