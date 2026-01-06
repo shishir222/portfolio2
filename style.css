@@ -120,23 +120,18 @@ body, button, a, input, select, textarea {
 }
 #robot {
   position: fixed;
-  left: -150px;
   top: 50%;
+  left: 0; /* start off-screen */
   width: 250px;
   opacity: 0;
   z-index: 9999;
   pointer-events: none;
-  
-  /* Initial state includes the tilt and the glow */
-  transform: translateY(-50%) rotate(10deg);
-  /* drop-shadow is perfect for PNGs as it wraps the actual robot shape */
+  transform: translate(-100%, -50%) rotate(10deg); /* completely off-screen */
   filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.7));
 }
 
 .show {
-  animation: 
-    slideIn 1s ease forwards, 
-    float 2.5s ease-in-out infinite 1s; /* Added 1s delay to wait for slideIn */
+  animation: slideIn 1s ease forwards, float 2.5s ease-in-out infinite 1s;
 }
 
 .hide {
@@ -144,41 +139,38 @@ body, button, a, input, select, textarea {
 }
 
 @keyframes slideIn {
-  from { 
-    left: -150px; 
-    opacity: 0; 
-    filter: drop-shadow(0 0 0px #00f2ff);
+  from {
+    transform: translate(-100%, -50%) rotate(10deg);
+    opacity: 0;
+    filter: drop-shadow(0 0 0 #00f2ff);
   }
-  to { 
-    left: 24px; 
-    opacity: 1; 
-    transform: translateY(-50%) rotate(10deg);
+  to {
+    transform: translate(24px, -50%) rotate(10deg); /* robot visible near left */
+    opacity: 1;
     filter: drop-shadow(0 0 15px #00f2ff);
   }
 }
 
 @keyframes slideOut {
-  from { 
-    left: 24px; 
-    opacity: 1; 
-    transform: translateY(-50%) rotate(10deg);
+  from {
+    transform: translate(24px, -50%) rotate(10deg);
+    opacity: 1;
     filter: drop-shadow(0 0 15px #00f2ff);
   }
-  to { 
-    left: -150px; 
-    opacity: 0; 
-    transform: translateY(-50%) rotate(10deg);
-    filter: drop-shadow(0 0 0px #00f2ff);
+  to {
+    transform: translate(-100%, -50%) rotate(10deg);
+    opacity: 0;
+    filter: drop-shadow(0 0 0 #00f2ff);
   }
 }
 
 @keyframes float {
-  0%, 100% { 
-    transform: translateY(-50%) translateY(0) rotate(10deg); 
+  0%, 100% {
+    transform: translate(24px, -50%) rotate(10deg);
     filter: drop-shadow(0 0 12px rgba(0, 242, 255, 0.6));
   }
-  50% { 
-    transform: translateY(-50%) translateY(-15px) rotate(12deg); /* Slightly more tilt at peak */
-    filter: drop-shadow(0 0 25px rgba(0, 242, 255, 0.9)); /* Brighter glow at peak */
+  50% {
+    transform: translate(24px, -65%) rotate(12deg); /* float slightly up */
+    filter: drop-shadow(0 0 25px rgba(0, 242, 255, 0.9));
   }
 }
