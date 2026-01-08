@@ -349,3 +349,72 @@ body, button, a, input, select, textarea {
 .animate-spin-slow {
   animation: spin-slow 10s linear infinite;
 }
+/* ===================== MOBILE RESPONSIVE FIX ===================== */
+
+/* 1️⃣ Make main containers flexible */
+.container, .wrapper, .main, section {
+    width: 90%;          /* adjust to screen width */
+    max-width: 1200px;   /* keeps it wide on desktop */
+    margin: 0 auto;       /* center content */
+    padding: 0 1rem;      /* optional spacing */
+}
+
+/* 2️⃣ Make images and videos scale */
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 3️⃣ Navigation adjustments for all screens */
+.navbar, .menu, nav {
+    display: flex;
+    flex-wrap: wrap;           /* allow items to wrap if needed */
+    justify-content: space-between;
+}
+
+.navbar a, .menu a {
+    padding: 0.5rem 1rem;      /* clickable spacing */
+}
+
+/* 4️⃣ Mobile-specific styles */
+@media (max-width: 480px) {
+
+    /* Text scaling */
+    h1 { font-size: 6vw; }
+    h2 { font-size: 5vw; }
+    h3 { font-size: 4.5vw; }
+    p, li, span { font-size: 4vw; }
+
+    /* Layout adjustments */
+    .sidebar, .aside {
+        display: none;           /* hide sidebars */
+    }
+
+    .navbar {
+        flex-direction: column;  /* stack nav items vertically */
+        align-items: flex-start;
+    }
+
+    .some-section, section {
+        padding: 1rem;           /* reduce padding for small screens */
+    }
+
+    .card, .grid-item {
+        width: 100%;              /* single-column layout */
+        margin-bottom: 1rem;
+    }
+
+    /* Buttons */
+    button, .btn {
+        width: 100%;              /* fill container */
+        padding: 0.5rem 1rem;
+        font-size: 4vw;
+    }
+
+    /* Optional: images or media that need spacing */
+    img, video {
+        margin-bottom: 1rem;
+    }
+}
+
+/* ===================== END MOBILE RESPONSIVE FIX ===================== */
