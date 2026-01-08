@@ -184,3 +184,14 @@ if (mantraElement) {
         }
     });
 }
+const buttons = document.querySelectorAll('.hud-cmd');
+
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    // 1. Remove 'active' class from all buttons
+    buttons.forEach(btn => btn.classList.remove('active'));
+    
+    // 2. Add 'active' class to the one we just clicked
+    button.classList.add('active');
+  });
+});

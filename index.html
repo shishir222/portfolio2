@@ -25,47 +25,64 @@
     </video>
 
     <!-- Header / Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 p-4 bg-transparent backdrop-blur-sm border-b border-gray-700">
-        <div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto">
-            <h1 class="hud-title text-xl font-bold tracking-widest text-center md:text-left">
-                WELCOME☺️
-            </h1>
-            
-            <div class="flex space-x-2 md:space-x-4 mt-2 md:mt-0 text-sm font-semibold">
-                <a href="#home" class="hud-button py-1 px-3 rounded-full">HOME</a>
-                <a href="#about" class="hud-button py-1 px-3 rounded-full">ABOUT</a>
-                <a href="#skills" class="hud-button py-1 px-3 rounded-full">SKILLS</a>
-                <a href="#services" class="hud-button py-1 px-3 rounded-full">SERVICES</a>
-                <a href="#portfolio" class="hud-button py-1 px-3 rounded-full">PROJECTS</a>
-                <a href="#contact" class="hud-button py-1 px-3 rounded-full">CONTACT</a>
-                <a href="https://ccrwritesforyou.blogspot.com/" target="_blank" class="hud-button py-1 px-3 rounded-full">BLOG</a>
-            </div>
-        </div>
+      <div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto">
+    
+    <!-- Only this wrapper gets blur -->
+   <h1 class="hud-title fixed top-4 left-4 text-xl font-bold tracking-widest z-50">
+    <span class="blur-bg px-2 py-1 rounded-md">WELCOME🤖</span>
+  </h1>
+<nav class="hud-nav command-stack">
+  <a href="#home" class="hud-cmd " data-text="HOME">▸ HOME</a>
+  <a href="#about" class="hud-cmd" data-text="ABOUT">▸ EDUCATION</a>
+  <a href="#skills" class="hud-cmd" data-text="SKILLS">▸ SKILLS</a>
+  <a href="#services" class="hud-cmd" data-text="SERVICES">▸ SERVICES</a>
+  <a href="#portfolio" class="hud-cmd" data-text="PROJECTS">▸ PROJECTS</a>
+  <a href="#contact" class="hud-cmd" data-text="CONTACT">▸ CONTACT</a>
+  <a href="https://ccrwritesforyou.blogspot.com/" target="_blank" class="hud-cmd" data-text="BLOG">▸ BLOG</a>
+</nav>
+
+
     </header>
 
     <main class="w-full mx-auto relative z-10">
-
-        <!-- Home Section -->
-        <section id="home" class="full-page-section">
+ <section id="home" class="full-page-section">
             <div class="hud-panel p-6 md:p-10 text-center">
                 <h1 class="hud-title text-5xl md:text-6xl font-bold tracking-widest mb-6">
                     SHISHIR CHALISE
                 </h1>
                 
                 <!-- Profile Image -->
-                <div class="w-40 h-40 mx-auto mb-6 relative p-1 border-2 border-dashed border-blue-500 rounded-full" 
-                     style="box-shadow: 0 0 10px rgba(0,191,255,0.5);">
-                    <img src="profile.png" alt="User Profile" class="w-full h-full object-cover rounded-full filter saturate-150" />
-                    <span class="absolute top-0 right-0 h-5 w-5 bg-blue-500 rounded-full" style="box-shadow: 0 0 7px #00BFFF;"></span>
-                    <span class="absolute bottom-0 left-0 h-5 w-5 bg-blue-500 rounded-full" style="box-shadow: 0 0 7px #00BFFF;"></span>
-                </div>
-                
-                <p class="text-3xl font-bold accent-color">DEVELOPER / DESIGNER</p>
+              <div class="relative w-44 h-44 mx-auto mb-6">
+  <!-- Rotating dashed border -->
+    <svg class="absolute inset-0 w-full h-full animate-spin-slow" viewBox="0 0 120 120">
+    <circle cx="60" cy="60" r="55" 
+            stroke="#00BFFF" 
+            stroke-width="3" 
+            fill="none" 
+            stroke-dasharray="20 15" 
+            stroke-linecap="round"
+            style="filter: drop-shadow(0 0 10px #00BFFF);" />
+  </svg>
+  <!-- Profile image -->
+ <img src="profile.png" alt="User Profile"
+       class="absolute top-1/2 left-1/2 w-40 h-40 object-cover rounded-full filter saturate-150"
+       style="transform: translate(-50%, -50%);" />
+
+  <!-- Corner glows -->
+  <span class="absolute top-0 right-0 h-5 w-5 bg-blue-500 rounded-full" style="box-shadow: 0 0 7px #00BFFF;"></span>
+  <span class="absolute bottom-0 left-0 h-5 w-5 bg-blue-500 rounded-full" style="box-shadow: 0 0 7px #00BFFF;"></span>
+</div>
+
+                <p class="text-3xl font-bold accent-color">
+  <span id="typed"></span>
+</p>
+
                 <p class="text-lg text-gray-400 mt-4 max-w-xl mx-auto">
                     Hi, I’m Shishir Chalise, a CSIT student and front-end developer passionate about creating functional and meaningful digital experiences.
                 </p>
             </div>
         </section>
+
 
         <!-- About Section -->
         <section id="about" class="full-page-section">
@@ -85,9 +102,7 @@
                         MISSION: Blend technical proficiency with creative design principles, creating functional and visually compelling applications.
                     </p>
                 </div>
-                <div class="mt-10 text-lg text-center font-bold">
-                    <span class="accent-color">CURRENT FOCUS:</span> JAVASCRIPT & FRONT-END FRAMEWORKS
-                </div>
+                
             </div>
         </section>
 
@@ -183,9 +198,7 @@
                 </div>
             </div>
         </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="full-page-section">
+<section id="contact" class="full-page-section flex flex-col items-center justify-center">
             <div class="hud-panel p-6 md:p-10">
                 <h2 class="section-title mb-4">CONTACT</h2>
                 <div class="mb-6 space-y-4 text-base">
@@ -195,9 +208,9 @@
                         <a href="mailto:shishirchalise255@gmail.com" class="ml-2 accent-color hover:text-white text-lg">shishirchalise255@gmail.com</a>
                     </div>
                     <div class="flex items-center justify-center">
-                        <i class="fas fa-satellite-dish accent-color w-8 text-2xl"></i>
-                        <span class="text-gray-400 mr-3">STATUS:</span>
-                        <span class="ml-2 text-red-500 text-lg">ON A MISSION</span>
+                         <i class="fa-solid fa-tower-broadcast accent-color w-8 text-2xl animate-pulse"></i>
+                        <span class="text-gray-400 mr-3 tracking-widest text-sm">SYSTEM:</span>
+                        <span class="ml-2 text-cyan-400 text-lg glitch" data-text="ACTIVE">ACTIVE</span>
                     </div>
                 </div>
                 <div class="mt-10 flex justify-center space-x-10 text-4xl">
@@ -208,29 +221,26 @@
                         <i class="fab fa-instagram"></i>
                     </a>
                 </div>
-<div style="text-align: center;">
-            <div id="krishna-mantra" style="display: inline-block; margin-top: 2.5rem; text-align: center; font-size: 0.875rem; color: #6b7280; transition: all 0.5s ease;"> कृष्णाय वासुदेवाय हरये परमात्मने ।<br> प्रणतः क्लेशनाशाय गोविंदाय नमो नमः ।। 
-             </div>
-</div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="text-center text-sm text-gray-600 pt-6 pb-16 mt-4">
-        &copy; 2025 Shishir Chalise | ALL RIGHTS RESERVED
-    </footer>
+                <div style="text-align: center;">
+                    <div id="krishna-mantra" style="display: inline-block; margin-top: 2.5rem; text-align: center; font-size: 0.875rem; color: #6b7280;"> 
+                        कृष्णाय वासुदेवाय हरये परमात्मने ।<br> प्रणतः क्लेशनाशाय गोविंदाय नमो नमः ।। 
+                    </div>
+                </div>
+            </div> </section>
+    </main> <footer class="w-full text-left text-sm text-gray-600 py-10 mt-auto pl-1 clear-both">
+    &copy; 2025 Shishir Chalise | ALL RIGHTS RESERVED
+</footer>
     <!-- Tiny virus following the cursor -->
  
 <!-- Small sound button in top-right corner -->
 <button id="soundButton" style="
     position: fixed;
-    top: 60px;           /* below blog button */
-    right: 10px;
+    bottom: 20px;           /* below blog button */
+    right: 20px;
     width: 40px;
     height: 40px;
     border: none;
-    background-color: rgba(38, 116, 164, 0.936);
+    background-color: rgba(255, 255, 255, 0.05);
     border-radius: 50%;
     cursor: pointer;
     z-index: 9999;
@@ -246,6 +256,16 @@
 <img src="virus.png" id="virus" alt="virus">
 <div id="neon-cursor"></div>
 <img src="robot1.png" id="robot" alt="Robot">
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    new Typed("#typed", {
+      strings: ["DEVELOPER", "DESIGNER","ENTREPRENEUR"],
+      typeSpeed: 90,
+      backSpeed: 100,
+      loop: true
+    });
+  </script>
 
 
   <script src="script.js"></script>

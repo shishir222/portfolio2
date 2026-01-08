@@ -191,3 +191,161 @@ body, button, a, input, select, textarea {
     50% { opacity: 0.8; text-shadow: 0 0 25px #FFD700; }
     100% { opacity: 1; text-shadow: 0 0 10px #FFD700; }
 }
+.glitch {
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  animation: glitch-skew 2.5s infinite linear alternate-reverse;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.glitch::before {
+  color: #00eaff;          /* neon cyan */
+  clip-path: inset(0 0 55% 0);
+  transform: translate(-2px, -1px);
+  animation: glitch-top 1.6s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  color: #7f5cff;          /* electric violet */
+  clip-path: inset(55% 0 0 0);
+  transform: translate(2px, 1px);
+  animation: glitch-bottom 1.3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-top {
+  0% { transform: translate(-2px, -2px); }
+  50% { transform: translate(2px, 0); }
+  100% { transform: translate(-1px, 1px); }
+}
+
+@keyframes glitch-bottom {
+  0% { transform: translate(2px, 2px); }
+  50% { transform: translate(-2px, 0); }
+  100% { transform: translate(1px, -1px); }
+}
+
+@keyframes glitch-skew {
+  0% { transform: skew(0deg); }
+  20% { transform: skew(1deg); }
+  40% { transform: skew(-1deg); }
+  60% { transform: skew(0.5deg); }
+  100% { transform: skew(0deg); }
+}
+.hud-nav.command-stack {
+  position: fixed;
+  top: 50%;              /* vertical center */
+  right: 20px;           /* horizontal offset from right */
+  transform: translateY(-50%); 
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999;
+  font-family: 'Orbitron', sans-serif; /* sci-fi font */
+}
+.hud-cmd {
+  position: relative;
+  /* Pure Neon Blue */
+  color: #00d9ff; 
+  font-weight: 600;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  /* Subtle dark blue glass effect */
+  background: rgba(0, 217, 255, 0.05); 
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  backdrop-filter: blur(4px);
+  transition: all 0.2s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.hud-cmd::before,
+.hud-cmd::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #00d9ff;
+  opacity: 0.6;
+}
+
+.hud-cmd::before {
+  left: 2px;
+  /* Deep Sci-fi Blue Shadow */
+  text-shadow: -2px 0 #0051ff; 
+  clip-path: inset(0 0 60% 0);
+  animation: glitch-top 1.5s infinite linear alternate-reverse;
+}
+
+.hud-cmd::after {
+  left: -2px;
+  /* Bright Cyan Shadow */
+  text-shadow: 2px 0 #00ffff; 
+  clip-path: inset(60% 0 0 0);
+  animation: glitch-bottom 1.2s infinite linear alternate-reverse;
+}
+
+/* HOVER: Increases the glow */
+.hud-cmd:hover {
+  color: #fff;
+  background: rgba(0, 217, 255, 0.15);
+  box-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
+  border-color: rgba(0, 217, 255, 0.6);
+}
+
+/* PRESSED STATE: Triggers exactly when clicked */
+.hud-cmd:active {
+  background: #00d9ff; /* Solid fill on click */
+  color: #000;         /* Contrast text */
+  box-shadow: 0 0 30px #00d9ff, inset 0 0 10px #ffffff;
+  transform: scale(0.95); /* Slight shrink to feel "pressed" */
+  transition: all 0.05s;
+}
+
+/* For the permanent 'active' toggle class you had */
+.hud-cmd.active {
+  color: #fff;
+  background: rgba(0, 217, 255, 0.4);
+  box-shadow: 0 0 20px #00d9ff;
+}
+/* Glitch animations */
+@keyframes glitch-top {
+  0% { transform: translate(-1px,-1px); }
+  50% { transform: translate(2px,0); }
+  100% { transform: translate(-1px,1px); }
+}
+@keyframes glitch-bottom {
+  0% { transform: translate(1px,1px); }
+  50% { transform: translate(-2px,0); }
+  100% { transform: translate(1px,-1px); }
+}
+.hud-panel {
+    position: relative;
+    left: 70px; /* Your desired shift */
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px; /* Ensure it has a limit so 'left' has room to work */
+}
+
+/* Add this to force the footer to ignore the HUD's shift */
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 10s linear infinite;
+}
